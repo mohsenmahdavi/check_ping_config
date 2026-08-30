@@ -1,9 +1,6 @@
 name: Auto Send Configs
 
 on:
-  schedule:
-    # اجرای خودکار در دقیقه ۰ هر ساعت
-    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -24,6 +21,6 @@ jobs:
 
       - name: Run script
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python main.py
