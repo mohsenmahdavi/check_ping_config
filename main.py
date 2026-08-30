@@ -1,4 +1,5 @@
 import os
+import time
 import requests
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
@@ -53,4 +54,8 @@ def main():
         print("Failed to send message to Telegram.")
 
 if __name__ == "__main__":
-    main()
+    # حلقه بی‌نهایت برای اجرای خودکار هر ۳۰ دقیقه یک‌بار
+    while True:
+        main()
+        print("۳۰ دقیقه انتظار تا اجرای بعدی...")
+        time.sleep(1800)  # ۱۸۰۰ ثانیه = ۳۰ دقیقه
