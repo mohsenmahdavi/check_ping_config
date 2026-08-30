@@ -2,6 +2,8 @@ name: Auto Send Configs
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *' # هر ۱ ساعت یک‌بار (می‌توانی بگذاری */2 برای هر ۲ ساعت)
 
 jobs:
   run-script:
